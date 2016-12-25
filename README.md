@@ -4,4 +4,8 @@ my note of Common Lisp
 I started learn Common Lisp with slimv.
 I studying tutorial of slimv.
 
-I'm going to study next 'roswell'.
+below Tutorial was done.
+[Tutorial Part1](http://kovisoft.bitbucket.org/tutorial.html)
+[Tutorial Part2](http://kovisoft.bitbucket.org/tutorial2.html)
+
+I willstudy next 'roswell'.

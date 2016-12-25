@@ -10,4 +10,4 @@ below Tutorial was done.
 
 [Tutorial Part2](http://kovisoft.bitbucket.org/tutorial2.html)
 
-I willstudy next 'roswell'.
+I will study next 'roswell'.

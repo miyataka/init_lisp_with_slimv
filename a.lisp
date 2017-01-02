@@ -19,8 +19,10 @@
     (#\, "--..--")
     (#\? "..--..")))
 
+;;(defun character-to-morse (character)
+;; (cdr (assoc character *morse-mapping* :test #'char-equal)))
 (defun character-to-morse (character)
- (cdr (assoc character *morse-mapping* :test #'char-equal)))
+ (second (assoc character *morse-mapping* :test #'char-equal)))
 ; ,W or ,w -> insert '(' before/outer cursor, and pair of ')'.
 ; ,S -> delete '(' on the cursor, and their pair of ')'.
 ; ,O -> split s-expression before cursor and after cursor.
@@ -31,11 +33,11 @@
 ; ,d -> compile defun and eval the function.
 ; ,F -> compile whole the file.
 ; ,L -> compile and Load whole the file.
-; <up> -> press <up> key in Insert-mode in REPL buffer evaluate latest command.
+; "up" -> press "up" key in Insert-mode in REPL buffer evaluate latest command.
 
 ;;;; Tutorial Slimv Part 2.
 
-(defun morse-to-charactor (morse-string)
+(defun morse-to-character (morse-string)
   (first (find morse-string *morse-mapping* :test #'string= :key #'second)))
 
 ; ,a -> Abort in Debugger.
@@ -57,10 +59,33 @@
 
 ; ,1 -> examine its macroexpansion.
 
-(load #P"/Users/taka/sh/quick.lisp")
+(load #P"/Users/taka/sh/quicklisp.lisp")
 
+(require :asdf-install)
 (quicklisp-quickstart:install)
 
 (ql:quickload :split-sequence)
 ; ,i -> inspect package? or other object?
 ;;;; end of Tutorial of Slimv Part 2.
+
+;;;; Tutorial Slimv Part 3.
+
+
+(defun morse-to-string (string)
+  (with-output-to-string (character-stream)
+    (loop
+      for morse-char in (split-sequence:split-sequence #\Space string)
+      do (write-char (morse-to-character morse-char) character-stream))))
+
+; ,t -> toggle trace/untrace.
+; ,T -> Untrace all function.
+; ,xl -> List called function.
+; ,xe -> List callees function.
+
+
+
+
+
+
+
+

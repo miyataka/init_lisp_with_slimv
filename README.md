@@ -18,7 +18,7 @@ I will study next 'roswell'.
 -  ,c -> swank-server start up.
 -  ,e -> eval s-expression on cursor.
 -  ,s -> print describe message in vim on cursor function, synbol, and so on.
--  ,h -> open clhs page in brouser on cursor function and etc...
+-  ,h -> open [clhs](http://www.lispworks.com/documentation/HyperSpec/Front/index.htm) page in brouser on cursor function and etc...
 -  ,d -> define some function on cursor.
 -  ,W or ,w -> insert '(' before/outer cursor, and pair of ')'.
 -  ,S -> delete '(' on the cursor, and their pair of ')'.
